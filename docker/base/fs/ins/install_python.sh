@@ -9,7 +9,7 @@ apt clean && apt-get update && apt-get -y upgrade
 
 # install python 3.13 globally
 apt-get install -y --no-install-recommends \
-    python3.13 python3.13-venv 
+    python3.13 python3.13-venv
     #python3.13-dev
 
 
@@ -26,6 +26,12 @@ echo "====================PYTHON PYVENV===================="
 
 # Install pyenv build dependencies.
 apt-get install -y --no-install-recommends \
+    make build-essential libssl-dev zlib1g-dev libbz2-dev \
+    libreadline-dev libsqlite3-dev wget curl llvm \
+    libncursesw5-dev xz-utils tk-dev libxml2-dev \
+    libxmlsec1-dev libffi-dev liblzma-dev
+
+apt-mark auto \
     make build-essential libssl-dev zlib1g-dev libbz2-dev \
     libreadline-dev libsqlite3-dev wget curl llvm \
     libncursesw5-dev xz-utils tk-dev libxml2-dev \
