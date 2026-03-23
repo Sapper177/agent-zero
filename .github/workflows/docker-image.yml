@@ -14,6 +14,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
   build-agent-zero-base:
+    needs: login-docker-hub
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -25,6 +26,7 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/agent-zero-base:latest
 
   build-agent-zero:
+    needs: build-agent-zero-base
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
